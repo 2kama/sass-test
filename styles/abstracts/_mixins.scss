@@ -1,0 +1,37 @@
+@mixin mQ($arg) {
+    @media screen and (max-width: $arg) {
+        @content;
+    }
+}
+
+@mixin crossBrowser($tweak, $property) {
+    -webkit-#{$tweak}: $property;
+        -ms-#{$tweak}: $property;
+         -o-#{$tweak}: $property;
+            #{$tweak}: $property;
+}
+
+@mixin sq($property) {
+    width: $property;
+    height: $property;
+}
+
+@mixin keyframes($animation) {
+    @keyframes #{$animation} {
+        @content;
+    }
+
+    @-webkit-keyframes #{$animation} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation} {
+        @content;
+    }
+}
+
+

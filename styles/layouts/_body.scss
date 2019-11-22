@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: $bg-color;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div, ul, li, a, header, section, nav, aside, footer, span, i {
+    display: block;
+    box-sizing: border-box;
+    float: left;
+}
+
+aside {
+    width: 16%;
+    height: 100%;
+    padding-top: 70px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+@include mQ(1200px) {
+
+  aside {
+    width: 24%;
+  }
+
+}
+
+
+@include mQ(768px) {
+  aside {
+    width: 300px;
+  }
+}

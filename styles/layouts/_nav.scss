@@ -1,0 +1,141 @@
+@include keyframes(round) {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+
+
+.profile-card {
+    width: 100%;
+    padding: 20px;
+
+    &__avatar {
+        width: 100%;
+
+        .avatar {
+            @include sq(120px);
+            float: none;
+            margin: 0 auto;
+            @include crossBrowser(border-radius, 50%);
+            background: url('img/img.jpg') no-repeat center center / cover;
+        }
+    }
+
+    &__dropdown {
+        width: 100%;
+
+        .dropdown {
+
+            &__button {
+                width: 100%;
+                padding: 12px 0;
+                cursor: pointer;
+    
+                span {
+                    font-size: $md-fs;
+                    color: $primary-font-color;
+                    width: 100%;
+                    text-align: center;
+                }
+    
+                i {
+                    margin-left: -25px;
+                    position: absolute;
+                    font-size: $sm-fs;
+                    color: $secondary-font-color;
+                    margin-top: 4px;
+                }
+            }
+
+
+            &__menu {
+                width: 100%;
+                background: #fff;
+                position: absolute;
+                display: none;
+            }
+
+        }
+
+        
+    }
+
+    &__addr {
+        width: 100%;
+        text-align: center;
+        font-size: $sm-fs;
+        color: $primary-font-color;
+        margin-top: -5px;
+    }
+}
+
+
+nav {
+    width: 100%;
+    margin-top: 40px;
+
+    ul.main-menu {
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            font-size: 12px;
+            background: transparent;
+            border-left: 5px solid transparent;
+            @include crossBrowser(border-top-right-radius, 7px);
+            @include crossBrowser(border-bottom-right-radius, 7px);
+            @include crossBrowser(transition, all 0.5s ease-out);
+
+            a {
+                width: 100%;
+                height: 100%;
+                color: $primary-font-color;
+                @include crossBrowser(transition, all 0.5s ease-out);
+
+                i {
+                    width: 45px;
+                    font-size: 20px;
+                    text-align: center;
+                    padding: 5px;
+                    margin-right: 10px;
+                    font-weight: thin;
+                    @include crossBrowser(transition, all 0.5s ease-out);
+                }
+
+                span {
+                    padding: 9px 0;
+                    font-size: $sm-fs;
+                    @include crossBrowser(transition, all 0.5s ease-out);
+                }
+            }
+
+            &:hover, &.active {
+                background: rgba(0, 0, 0, 0.3);
+                border-left: 5px solid $secondary-font-color;
+                @include crossBrowser(transition, all 0.5s ease-out);
+                
+
+                a {
+                    color: $secondary-font-color;
+                    @include crossBrowser(transition, all 0.5s ease-out);
+
+                    i {
+                        animation-name: round;
+                        animation-duration: 1s;
+                    }
+
+                    span {
+                        font-weight: bold;
+                        @include crossBrowser(transition, all 0.5s ease-out);
+                    }
+                }
+
+                
+            }
+        }
+    }
+}
